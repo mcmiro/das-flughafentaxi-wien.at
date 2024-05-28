@@ -1,0 +1,81 @@
+{
+  "headline": {
+    "h1": "Flughafentaxi Bestellung",
+    "vehicle": "Fahrzeug",
+    "direction": "Wohin",
+    "dateTime": "Datum und Zeit",
+    "contactAddress": "Kontaktdaten und Adresse",
+    "extras": "Extras",
+    "others": "Sonstiges",
+    "payment": "Zahlungsoptionen",
+    "flightInformations": "Fluginformationen",
+    "differentAddress": "Abweichende Adresse"
+  },
+  "labelAndPlaceholder": {
+    "vehicleSm": "Limousine",
+    "vehicleMd": "Kombi",
+    "vehicleLg": "Van",
+    "bags": ["1-2 Hangepäck", "1-2 Hangepäck", "1-8 Hangepäck"],
+    "luggage": ["1-2 Koffer", "1-3 Koffer", "1-8 Koffer"],
+    "persons": ["1-3 Personen", "1-4 Personen", "1-8 Personen"],
+    "toAirport": "Zum Flughafen",
+    "fromAirport": "Vom Flughafen",
+    "pickDate": "Datum auswählen",
+    "pickTime": "Uhrzeit auswählen",
+    "name": "Vor- und Nachname",
+    "email": "E-Mail",
+    "phone": "Telefonnummer",
+    "town": "Ort auswählen",
+    "district": "Bezirk auswählen",
+    "address": "Adresse",
+    "number": "Hausnr.",
+    "childSeat": "Kindersitz",
+    "childSeatSm": "Babbywanne",
+    "childSeatMd": "Kindersitz",
+    "childSeatLg": "Untersetzer",
+    "pickChildSeatSm": "Babbywanne auswählen",
+    "pickChildSeatMd": "Kindersitz auswählen",
+    "pickChildSeatLg": "Untersetzer auswählen",
+    "stopover": "Zwischenstopp",
+    "pickStopover": "Zwischenstopp auswählen",
+    "message": "Nachricht",
+    "pickPayment": "Zahlungsoption auswählen",
+    "paymentOptions": ["Barzahlung", "Kartenzahlung", "Lieferschein"],
+    "returnJourney": "Rückfahrt",
+    "departure": "Abflugort",
+    "flightId": "Flugnummer",
+    "differentAddress": "Abweichende Adresse",
+    "legalCheck": "Ich akzeptiere hiermit die",
+    "termsAndConditions": "AGB",
+    "and": "und",
+    "dataProtection": "Datenschutz",
+    "submit": "Jetzt Buchen"
+  },
+  "messages": {
+    "success": {
+      "title": "Buchung ist bei uns eingegangen",
+      "copy": "Wir freuen uns, Ihnen mitteilen zu können, dass Ihre Buchung erfolgreich war! Vielen Dank für Ihr Vertrauen in unser Unternehmen."
+    },
+    "error": {
+      "title": "Bestellung wurde nicht angenommen",
+      "copy": "Leider können wir Ihre Bestellung nicht annehmen, da unsere Kapazitäten erschöpft sind. Wir entschuldigen uns für die Unannehmlichkeiten und danken für Ihr Verständnis."
+    }
+  },
+  "validation": {
+    "vehicle": "Fahrzeug auswählen",
+    "dateFormat": "Datum sollte im Format TT.MM.JJJJ sein",
+    "time": "Uhrzeit ist erforderlich",
+    "timeFormat": "Uhrzeit sollte im Format HH:MM sein",
+    "flightArrivalDirection": "Abflugort ist erforderlich",
+    "flightId": "Flugnummer ist erforderlich",
+    "name": "Name ist erforderlich",
+    "email": "E-Mail ist erforderlich",
+    "emailFormat": "Das ist kein gültiges E-Mail Format",
+    "phone": "Telefonnummer ist erforderlich",
+    "town": "Ort ist erforderlich",
+    "district": "Bezirk ist erforderlich",
+    "address": "Adresse ist erforderlich",
+    "number": "Hausnummer ist erforderlich",
+    "conditions": "AGB's und Datenschutz müssen akzeptiert werden um die Bestellung durchzuführen."
+  }
+}

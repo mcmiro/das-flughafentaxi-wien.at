@@ -1,0 +1,81 @@
+{
+  "headline": {
+    "h1": "Airport Transfer Order",
+    "vehicle": "Vehicle",
+    "direction": "Direction",
+    "dateTime": "Date and Time",
+    "contactAddress": "Contact and Address",
+    "extras": "Extras",
+    "others": "Others",
+    "payment": "Payment options",
+    "flightInformations": "Flight Informations",
+    "differentAddress": "Different Address"
+  },
+  "labelAndPlaceholder": {
+    "vehicleSm": "Limousine",
+    "vehicleMd": "Combi",
+    "vehicleLg": "Van",
+    "bags": ["1-2 Bags", "1-2 Bags", "1-8 Bags"],
+    "luggage": ["1-2 Luggage", "1-3 Luggage", "1-8 Luggage"],
+    "persons": ["1-3 Persons", "1-4 Persons", "1-8 Persons"],
+    "toAirport": "To Airport",
+    "fromAirport": "From Airport",
+    "pickDate": "Pick Date",
+    "pickTime": "Pick Time",
+    "name": "Full Name",
+    "email": "E-Mail",
+    "phone": "Phone Number",
+    "town": "Pick Town",
+    "district": "Pick District",
+    "address": "Address",
+    "number": "Number",
+    "childSeat": "Child Seat",
+    "childSeatSm": "Babbywanne",
+    "childSeatMd": "Child Seat",
+    "childSeatLg": "Coasters",
+    "pickChildSeatSm": "Pick Babbywanne",
+    "pickChildSeatMd": "Pick Child Seat",
+    "pickChildSeatLg": "Pick Coasters",
+    "stopover": "Stopover",
+    "pickStopover": "Pick Stopover",
+    "message": "Message",
+    "pickPayment": "Pick Payment Option",
+    "paymentOptions": ["Cash", "Card", "Delivery Note"],
+    "returnJourney": "Return Journey",
+    "departure": "Departure",
+    "flightId": "Flight ID",
+    "differentAddress": "Different Address",
+    "legalCheck": "I accept the",
+    "termsAndConditions": "Terms and Conditions",
+    "and": "and",
+    "dataProtection": "Data Protection",
+    "submit": "Book now"
+  },
+  "messages": {
+    "success": {
+      "title": "We have received the booking",
+      "copy": "We are pleased to inform you that your booking was successful! Thank you for your trust in our company."
+    },
+    "error": {
+      "title": "Order was not accepted",
+      "copy": "Unfortunately we cannot accept your order because our capacity has been exhausted. We apologize for the inconvenience and thank you for your understanding."
+    }
+  },
+  "validation": {
+    "vehicle": "Select vehicle",
+    "dateFormat": "Date should be in the format DD.MM.YYYY",
+    "time": "Time is required",
+    "timeFormat": "Time should be in the format HH:MM",
+    "flightArrivalDirection": "Departure location is required",
+    "flightId": "Flight number is required",
+    "name": "Name is required",
+    "email": "Email is required",
+    "emailFormat": "This is not a valid email format",
+    "phone": "Phone number is required",
+    "town": "Town is required",
+    "district": "District is required",
+    "address": "Address is required",
+    "number": "House number is required",
+    "conditions": "Terms and conditions and privacy policy must be accepted to proceed with the order."
+  }
+}
