@@ -1,3 +1,0 @@
-[build]
-  command = "ESLINT_CONFIG_PATH=.eslintrc.netlify.cjs npm run build"
-  publish = "build"
