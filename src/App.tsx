@@ -8,15 +8,16 @@ import { useAtom } from 'jotai';
 import { orderFormAtom } from '@/hooks/use-order-form';
 import { useTranslation } from 'react-i18next';
 import useI18n from './hooks/use-translation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ResponseModel } from './types/response';
 
 function App() {
   const { t } = useTranslation();
   const { lang, changeLanguage } = useI18n();
   const [orderForm] = useAtom<any>(orderFormAtom);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [responseContent, setResponseContent] = useState<ResponseModel[]>();
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const wasModalOpenRef = useRef<boolean>(false);
 
   const schema = useOrderSchema();
   const form = useForm<OrderFormValues>({
@@ -54,6 +55,13 @@ function App() {
   };
 
   useEffect(() => {
+    if (!isModalOpen && wasModalOpenRef.current) {
+      window.location.reload();
+    }
+    wasModalOpenRef.current = isModalOpen;
+  }, [isModalOpen]);
+
+  useEffect(() => {
     changeLanguage(lang !== null ? lang : 'de');
   }, [lang]);
 
@@ -74,7 +82,12 @@ function App() {
             )}
             <UI.CheckConditionsField form={form} />
             <UI.PriceSection />
-            <UI.Button className="ml-auto mt-4 mb-64" type="submit">
+            <UI.Button
+              size="lg"
+              weight="bold"
+              className="ml-auto mt-4 mb-64"
+              type="submit"
+            >
               {t('labelAndPlaceholder.submit')}
             </UI.Button>
           </form>

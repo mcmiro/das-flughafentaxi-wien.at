@@ -31,8 +31,9 @@ export function DatePicker({ section, onSelect }: DatePickerProps) {
       <UI.PopoverTrigger asChild>
         <UI.Button
           variant={'outline'}
+          size="lg"
           className={cn(
-            'w-full justify-start text-left font-normal',
+            'w-full justify-start text-left font-normal px-3',
             !date && 'text-muted-foreground'
           )}
         >

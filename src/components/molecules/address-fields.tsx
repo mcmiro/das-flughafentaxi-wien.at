@@ -14,13 +14,8 @@ export interface AddressFormProps {
 
 const AddressForm = ({ form, section }: AddressFormProps) => {
   const { t } = useTranslation();
-  const {
-    getTownsAndDistricts,
-    towns,
-    selectedTown,
-    setSelectedTown,
-    rawDbData,
-  } = useTown();
+  const { getTownsAndDistricts, towns, selectedTown, setSelectedTown } =
+    useTown();
 
   const {
     handleDistricts,
@@ -28,7 +23,7 @@ const AddressForm = ({ form, section }: AddressFormProps) => {
     selectedDistrict,
     setSelectedDistrict,
     filterDistricts,
-  } = useDistrict(rawDbData);
+  } = useDistrict();
 
   const {
     getStreets,
@@ -111,7 +106,7 @@ const AddressForm = ({ form, section }: AddressFormProps) => {
   };
 
   return (
-    <div className="grid grid-cols-12 gap-4 mt-4 md:h-12">
+    <div className="grid grid-cols-12 gap-4 mt-4 md:h-12" key={section}>
       <div className="col-span-5 md:col-span-2">
         <UI.FormField
           control={form.control}

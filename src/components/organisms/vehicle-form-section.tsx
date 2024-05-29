@@ -16,12 +16,15 @@ function VehicleFormSection({ form }: VehicleFormSectionProps) {
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const vehicle = urlParams.get('vehicle');
+  const vehicleGet = urlParams.get('vehicle');
 
   //Handle vehicle
   useEffect(() => {
-    handleVehicle(vehicle !== null ? vehicle : 'sm');
-  }, [vehicle]);
+    const selectedVehicle = vehicles?.find(
+      (vehicle: VehicleModel) => vehicle.type === vehicleGet
+    )?.type;
+    handleVehicle(selectedVehicle !== undefined ? selectedVehicle : 'sm');
+  }, [vehicleGet]);
 
   return (
     <div className="mt-8">

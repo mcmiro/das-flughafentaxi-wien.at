@@ -57,8 +57,9 @@ export function TimePicker({ section, onChange }: TimePickerProps) {
       <PopoverTrigger asChild>
         <Button
           variant={'outline'}
+          size="lg"
           className={cn(
-            'w-full justify-start text-left font-normal',
+            'w-full justify-start text-left font-normal px-3',
             time === '' && 'text-muted-foreground'
           )}
         >

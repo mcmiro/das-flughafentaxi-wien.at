@@ -26,7 +26,10 @@ function DirectionFormSection({ form }: DirectionFormSectionProps) {
           type="button"
           variant={selectedDirection === 'to-airport' ? 'default' : 'outline'}
           size="lg"
-          className="w-full flex sm:justify-between"
+          weight="bold"
+          className={`w-full flex sm:justify-between ${
+            selectedDirection === 'to-airport' ? 'opacity-100' : 'opacity-50'
+          }`}
           active={selectedDirection === 'to-airport'}
           onClick={handleDirectionToAirport}
         >
@@ -37,7 +40,10 @@ function DirectionFormSection({ form }: DirectionFormSectionProps) {
           type="button"
           variant={selectedDirection === 'from-airport' ? 'default' : 'outline'}
           size="lg"
-          className="w-full flex sm:justify-between"
+          weight="bold"
+          className={`w-full flex sm:justify-between ${
+            selectedDirection === 'from-airport' ? 'opacity-100' : 'opacity-50'
+          }`}
           active={selectedDirection === 'from-airport'}
           onClick={() => handleDirection('from-airport')}
         >

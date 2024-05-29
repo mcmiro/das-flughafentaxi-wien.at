@@ -1,34 +1,43 @@
 import { useState } from 'react';
 import { TownModelProps } from '@/types/town';
+import { useAtom } from 'jotai';
+import { orderAdditionalsAtom } from './use-town';
 
 export type DirectionProps = 'to-airport' | 'from-airport';
 
-const useDistrict = (rawDbData: any) => {
-  const [districts, setDistricts] = useState<TownModelProps[]>();
-  const [selectedDistrict, setSelectedDistrict] = useState<TownModelProps>();
+const useDistrict = () => {
+  const [orderAdditionals] = useAtom(orderAdditionalsAtom);
+  const [districts, setDistricts] = useState<TownModelProps[]>([]);
+  const [selectedDistrict, setSelectedDistrict] =
+    useState<TownModelProps | null>(null);
 
   const handleDistricts = (town: string) => {
-    const parsedDistricts = Object.keys(rawDbData)
+    if (!orderAdditionals.towns) return [];
+
+    const parsedDistricts = Object.keys(orderAdditionals.towns)
       .map((key) => {
-        const value = rawDbData[key];
+        const value = orderAdditionals.towns[key];
         if (key === town) {
           return value;
         }
-        return;
+        return undefined;
       })
       .filter((districts) => districts !== undefined)
       .flat();
-    setDistricts(parsedDistricts);
 
+    setDistricts(parsedDistricts);
     return parsedDistricts;
   };
 
   const filterDistricts = (selectedTown: string, value: string) => {
+    if (!orderAdditionals.towns) return;
+
     const districtsList = handleDistricts(selectedTown);
-    const district: TownModelProps[] = districtsList.filter(
+    const district = districtsList.filter(
       (el: TownModelProps) => el.postal_code === value
     );
-    setSelectedDistrict(district[0]);
+
+    setSelectedDistrict(district[0] || null);
   };
 
   return {

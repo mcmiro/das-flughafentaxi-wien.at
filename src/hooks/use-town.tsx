@@ -11,7 +11,6 @@ export type DirectionProps = 'to-airport' | 'from-airport';
 const useTown = () => {
   const [additionalsAndTowns, setAdditionalsAndTowns] =
     useAtom<AdditionalaAndTownsModel>(orderAdditionalsAtom);
-  const [rawDbData, setRawDbData] = useState<any>();
   const [towns, setTowns] = useState<string[]>();
   const [selectedTown, setSelectedTown] = useState<string>();
 
@@ -27,7 +26,6 @@ const useTown = () => {
       })
       .catch(console.error);
     handleTowns(dbData);
-    setRawDbData(dbData);
 
     return dbData;
   };
@@ -43,7 +41,6 @@ const useTown = () => {
     towns,
     setSelectedTown,
     selectedTown,
-    rawDbData,
     additionalsAndTowns,
   };
 };
