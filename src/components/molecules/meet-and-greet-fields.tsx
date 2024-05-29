@@ -2,12 +2,14 @@ import { UI } from '..';
 import { FieldValues } from 'react-hook-form';
 import { useAtom } from 'jotai';
 import { orderAdditionalsAtom } from '@/hooks/use-town';
+import { useTranslation } from 'react-i18next';
 
 export interface MeetAndgGreetFormProps {
   form: FieldValues;
 }
 
 function MeetAndgGreetForm({ form }: MeetAndgGreetFormProps) {
+  const { t } = useTranslation();
   const [additionalsAndTowns] = useAtom<any>(orderAdditionalsAtom);
 
   return (
@@ -22,8 +24,8 @@ function MeetAndgGreetForm({ form }: MeetAndgGreetFormProps) {
                 Meet and Greet
               </UI.FormLabel>
               <UI.FormDescription>
-                Am Flughafen mit einer Empfangstaffel auf die Anreisende warten.
-                Aufpreis: €{additionalsAndTowns.additionals?.meet_and_greet},-
+                {t('labelAndPlaceholder.meetAndGreet')} €
+                {additionalsAndTowns.additionals?.meet_and_greet},-
               </UI.FormDescription>
             </div>
             <UI.FormControl>
