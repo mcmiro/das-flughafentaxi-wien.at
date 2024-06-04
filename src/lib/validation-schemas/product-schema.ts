@@ -5,7 +5,7 @@ import { TFunction } from 'i18next';
 export const productSchema = (t: TFunction) =>
   z.object({
     vehicle: z.string({ message: t('validation.vehicle') }),
-    date: z.string({ message: t('validation.dateFormat') }),
+    date: z.string({ message: t('validation.date') }),
     time: z
       .string({ message: t('validation.timeFormat') })
       .min(1, { message: t('validation.time') }),

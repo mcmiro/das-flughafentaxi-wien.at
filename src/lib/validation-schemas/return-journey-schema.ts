@@ -19,7 +19,7 @@ export const returnJourneySchema = (t: TFunction) =>
           return true;
         },
         {
-          message: t('validation.dateFormat'),
+          message: t('validation.date'),
         }
       ),
     time: z

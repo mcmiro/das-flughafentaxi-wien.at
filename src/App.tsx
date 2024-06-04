@@ -72,10 +72,15 @@ function App() {
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
             <h1 className="text-3xl">{t('headline.h1')}</h1>
             <UI.VehicleFormSection form={form} />
+            <UI.Spacer size="xs" />
             <UI.DirectionFormSection form={form} />
+            <UI.Spacer size="xs" />
             <UI.DateTimeFormSection section="product" form={form} />
+            <UI.Spacer size="xs" />
             <UI.CustomerFormSection form={form} />
+            <UI.Spacer size="xs" />
             <UI.ExtrasFormSection form={form} />
+            <UI.Spacer size="xs" />
             <UI.ReturnJourneySwitch form={form} />
             {orderForm?.isReturnJourney && (
               <UI.ReturnJourneySection form={form} />

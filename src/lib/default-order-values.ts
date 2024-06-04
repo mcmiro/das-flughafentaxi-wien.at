@@ -15,13 +15,13 @@ const defaultValues = {
     meetAndGreet: false,
   },
   customer: {
-    name: 'Miro',
-    email: 'miro.grujin@hotmail.com',
-    phone: '0123456789',
+    name: '',
+    email: '',
+    phone: '',
     town: '',
     postal_code: '',
-    address: 'Huglgasse',
-    number: '22',
+    address: '',
+    number: '',
   },
   data: {
     paymentMethod: '',

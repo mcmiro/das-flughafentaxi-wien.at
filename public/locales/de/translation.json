@@ -54,17 +54,17 @@
   },
   "messages": {
     "success": {
-      "title": "Buchung ist bei uns eingegangen",
-      "copy": "Wir freuen uns, Ihnen mitteilen zu können, dass Ihre Buchung erfolgreich war! Vielen Dank für Ihr Vertrauen in unser Unternehmen."
+      "title": "Bestellung erfolgreich gebucht",
+      "copy": "Wir freuen uns, Ihnen mitteilen zu können, dass Ihre Buchung erfolgreich war! Sie erhalten in Kürze eine E-Mail mit der Bestellbestätigung (bitte unbedingt im SPAM-Ordner nachsehen). Vielen Dank für Ihr Vertrauen in unser Unternehmen."
     },
     "error": {
-      "title": "Bestellung wurde nicht angenommen",
-      "copy": "Leider können wir Ihre Bestellung nicht annehmen, da unsere Kapazitäten erschöpft sind. Wir entschuldigen uns für die Unannehmlichkeiten und danken für Ihr Verständnis."
+      "title": "Bestellung konnte nicht angenommen werden",
+      "copy": "Leider sind unsere Kapazitäten zu diesem Zeitpunkt erschöpft. Wir entschuldigen uns für die Unannehmlichkeiten und danken für Ihr Verständnis."
     }
   },
   "validation": {
     "vehicle": "Fahrzeug auswählen",
-    "dateFormat": "Datum sollte im Format TT.MM.JJJJ sein",
+    "date": "Datum ist erforderlich",
     "time": "Uhrzeit ist erforderlich",
     "timeFormat": "Uhrzeit sollte im Format HH:MM sein",
     "flightArrivalDirection": "Abflugort ist erforderlich",

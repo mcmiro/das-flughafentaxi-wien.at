@@ -3,10 +3,11 @@ import ChildSeatForm from '@/components/molecules/child-seat-fields';
 import StopoverForm from '@/components/molecules/stopover-fields';
 import { FieldValues } from 'react-hook-form';
 import { paymentOptions } from '@/constants/payment-options';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAtom } from 'jotai';
 import { orderFormAtom } from '@/hooks/use-order-form';
+import { TriangleAlert } from 'lucide-react';
 
 export interface ExtrasFormSectionProps {
   form: FieldValues;
@@ -15,6 +16,8 @@ export interface ExtrasFormSectionProps {
 function ExtrasFormSection({ form }: ExtrasFormSectionProps) {
   const [orderForm] = useAtom<any>(orderFormAtom);
   const { t } = useTranslation();
+  const [childseatUi, setChildseatUi] = useState(false);
+
   useEffect(() => {
     form.setValue('data.paymentMethod', paymentOptions[0].option);
   }, []);
@@ -27,14 +30,27 @@ function ExtrasFormSection({ form }: ExtrasFormSectionProps) {
     return option[index];
   };
 
+  const handleChildseatUi = (payload: boolean) => {
+    setChildseatUi(payload);
+  };
+
   return (
     <>
       <div className="mt-6">
         <h2 className="text-xl">{t('headline.extras')}</h2>
         <div className="grid md:grid-cols-2 gap-8 items-start mt-2">
-          <ChildSeatForm form={form} />
+          <ChildSeatForm form={form} childseatUi={handleChildseatUi} />
           <StopoverForm form={form} />
         </div>
+        {childseatUi && (
+          <div className="pt-2">
+            <small className="text-gray-500 flex items-center gap-2 underline">
+              <TriangleAlert className="w-4" />
+              Bitte beachten Sie dass ein Kinderwagen wie ein Koffer betrachtet
+              wird.
+            </small>
+          </div>
+        )}
       </div>
       {orderForm?.product?.direction === 'from-airport' && (
         <UI.MeetAndgGreetForm form={form} />

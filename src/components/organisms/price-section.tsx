@@ -12,7 +12,7 @@ function PriceSection() {
 
   return (
     <div className="mt-4 top-8">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {priceToAirport > 0 && (
           <div className="flex flex-col justify-between text-gray-900 rounded-2xl bg-gray-50 py-3 px-5 transition-all duration-500 hover:bg-gray-100">
             <div>

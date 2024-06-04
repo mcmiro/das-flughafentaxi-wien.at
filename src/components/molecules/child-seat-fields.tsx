@@ -8,9 +8,10 @@ import { useTranslation } from 'react-i18next';
 
 export interface ChildSeatFormProps {
   form: FieldValues;
+  childseatUi: (e?: any) => void;
 }
 
-function ChildSeatForm({ form }: ChildSeatFormProps) {
+function ChildSeatForm({ form, childseatUi }: ChildSeatFormProps) {
   const { t } = useTranslation();
   const { handleResetChildseats } = useOrderForm(form);
   const [active, setActive] = useState<boolean>(false);
@@ -18,6 +19,11 @@ function ChildSeatForm({ form }: ChildSeatFormProps) {
   function createArray(length: number) {
     return Array.from({ length }, (_, index) => index);
   }
+
+  const handleChildseatUi = (payload: boolean) => {
+    childseatUi(!payload);
+    setActive(!payload);
+  };
 
   useEffect(() => {
     if (!active) {
@@ -28,7 +34,7 @@ function ChildSeatForm({ form }: ChildSeatFormProps) {
   return (
     <div className={`grid gap-4 ${active ? 'md:grid-cols-2' : ''}`}>
       <UI.Card
-        onClick={() => setActive(!active)}
+        onClick={() => handleChildseatUi(active)}
         className={`w-full ${
           active ? 'border-zinc-600 opacity-100' : 'opacity-50'
         } bg-gray-50 rounded-2xl shadow-none relative cursor-pointer transition duration-300 ease-in-out`}

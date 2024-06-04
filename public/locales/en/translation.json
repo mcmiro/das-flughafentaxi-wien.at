@@ -64,7 +64,7 @@
   },
   "validation": {
     "vehicle": "Select vehicle",
-    "dateFormat": "Date should be in the format DD.MM.YYYY",
+    "date": "Date is required",
     "time": "Time is required",
     "timeFormat": "Time should be in the format HH:MM",
     "flightArrivalDirection": "Departure location is required",

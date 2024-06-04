@@ -16,9 +16,14 @@ function ReturnJourneySection({ form }: ReturnJourneySectionProps) {
       <div className="mt-4">
         <UI.DateTimeFormSection section="returnJourney" form={form} />
         <div className="mt-4">
-          <h2 className="text-xl">{t('headline.flightInformations')}</h2>
           {orderForm?.product?.direction === 'to-airport' && (
-            <UI.FlightInformationSection section="returnJourney" form={form} />
+            <>
+              <h2 className="text-xl">{t('headline.flightInformations')}</h2>
+              <UI.FlightInformationSection
+                section="returnJourney"
+                form={form}
+              />
+            </>
           )}
         </div>
         {orderForm?.product?.direction === 'to-airport' && (

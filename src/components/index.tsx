@@ -43,6 +43,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import Spacer from './ui/spacer';
 import { Switch } from './ui/switch';
 import { TimePicker } from './ui/time-picker';
 import { Textarea } from './ui/textarea';
@@ -105,6 +106,7 @@ export const UI = {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Spacer,
   Switch,
   TimePicker,
   Textarea,
