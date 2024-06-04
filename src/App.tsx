@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import useI18n from './hooks/use-translation';
 import { useEffect, useRef, useState } from 'react';
 import { ResponseModel } from './types/response';
+import '@iframe-resizer/child';
 
 function App() {
   const { t } = useTranslation();
