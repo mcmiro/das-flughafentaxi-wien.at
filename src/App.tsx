@@ -69,11 +69,13 @@ function App() {
   return (
     <>
       {responseContent ? (
-        <UI.ResponseMessage
-          content={responseContent}
-          isModalOpen={isModalOpen}
-          closeModal={() => setIsModalOpen(false)}
-        />
+        <div className="h-[400px]">
+          <UI.ResponseMessage
+            content={responseContent}
+            isModalOpen={isModalOpen}
+            closeModal={() => setIsModalOpen(false)}
+          />
+        </div>
       ) : (
         <div className="container mx-auto px-4 sm:px-8 py-16 max-w-[1048px]">
           <UI.Form {...form}>
