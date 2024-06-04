@@ -31,7 +31,7 @@ function App() {
     if (!formData.isReturnJourney) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { returnJourney, ...rest } = formData;
-      return { ...rest };
+      return { ...rest, lang };
     }
     return formData;
   };
@@ -68,43 +68,44 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto px-4 sm:px-8 py-16 max-w-[1048px]">
-        <UI.Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-            <h1 className="text-3xl">{t('headline.h1')}</h1>
-            <UI.VehicleFormSection form={form} />
-            <UI.Spacer size="xs" />
-            <UI.DirectionFormSection form={form} />
-            <UI.Spacer size="xs" />
-            <UI.DateTimeFormSection section="product" form={form} />
-            <UI.Spacer size="xs" />
-            <UI.CustomerFormSection form={form} />
-            <UI.Spacer size="xs" />
-            <UI.ExtrasFormSection form={form} />
-            <UI.Spacer size="xs" />
-            <UI.ReturnJourneySwitch form={form} />
-            {orderForm?.isReturnJourney && (
-              <UI.ReturnJourneySection form={form} />
-            )}
-            <UI.CheckConditionsField form={form} />
-            <UI.PriceSection />
-            <UI.Button
-              size="lg"
-              weight="bold"
-              className="ml-auto my-4"
-              type="submit"
-            >
-              {t('labelAndPlaceholder.submit')}
-            </UI.Button>
-          </form>
-        </UI.Form>
-      </div>
-      {responseContent && (
+      {responseContent ? (
         <UI.ResponseMessage
           content={responseContent}
           isModalOpen={isModalOpen}
           closeModal={() => setIsModalOpen(false)}
         />
+      ) : (
+        <div className="container mx-auto px-4 sm:px-8 py-16 max-w-[1048px]">
+          <UI.Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+              <h1 className="text-3xl">{t('headline.h1')}</h1>
+              <UI.VehicleFormSection form={form} />
+              <UI.Spacer size="xs" />
+              <UI.DirectionFormSection form={form} />
+              <UI.Spacer size="xs" />
+              <UI.DateTimeFormSection section="product" form={form} />
+              <UI.Spacer size="xs" />
+              <UI.CustomerFormSection form={form} />
+              <UI.Spacer size="xs" />
+              <UI.ExtrasFormSection form={form} />
+              <UI.Spacer size="xs" />
+              <UI.ReturnJourneySwitch form={form} />
+              {orderForm?.isReturnJourney && (
+                <UI.ReturnJourneySection form={form} />
+              )}
+              <UI.CheckConditionsField form={form} />
+              <UI.PriceSection />
+              <UI.Button
+                size="lg"
+                weight="bold"
+                className="ml-auto my-4"
+                type="submit"
+              >
+                {t('labelAndPlaceholder.submit')}
+              </UI.Button>
+            </form>
+          </UI.Form>
+        </div>
       )}
     </>
   );

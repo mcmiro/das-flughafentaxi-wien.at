@@ -29,6 +29,7 @@
     "district": "Bezirk auswählen",
     "address": "Adresse",
     "number": "Hausnr.",
+    "childseatMessage": "Kindersitze zählen jeweils als Sitzplatz im Fahrzeug. Kinderwagen zählen jeweils als Gepäckstück. Bitte berücksichtigen Sie dies bei der Fahrzeugauswahl.",
     "childSeat": "Kindersitz",
     "childSeatSm": "Babbywanne",
     "childSeatMd": "Kindersitz",

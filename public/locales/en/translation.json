@@ -29,6 +29,7 @@
     "district": "Pick District",
     "address": "Address",
     "number": "Number",
+    "childseatMessage": "Child seats each count as a seat in the vehicle. Baby strollers each count as a piece of luggage. Please consider this when choosing a vehicle.",
     "childSeat": "Child Seat",
     "childSeatSm": "Carrycot",
     "childSeatMd": "Toddler Car Seat",

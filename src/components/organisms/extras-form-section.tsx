@@ -38,19 +38,18 @@ function ExtrasFormSection({ form }: ExtrasFormSectionProps) {
     <>
       <div className="mt-6">
         <h2 className="text-xl">{t('headline.extras')}</h2>
+        {childseatUi && (
+          <div className="pt-2">
+            <small className="text-gray-500 flex items-center gap-2">
+              <TriangleAlert className="w-4" />
+              {t('labelAndPlaceholder.childseatMessage')}
+            </small>
+          </div>
+        )}
         <div className="grid md:grid-cols-2 gap-8 items-start mt-2">
           <ChildSeatForm form={form} childseatUi={handleChildseatUi} />
           <StopoverForm form={form} />
         </div>
-        {childseatUi && (
-          <div className="pt-2">
-            <small className="text-gray-500 flex items-center gap-2 underline">
-              <TriangleAlert className="w-4" />
-              Bitte beachten Sie dass ein Kinderwagen wie ein Koffer betrachtet
-              wird.
-            </small>
-          </div>
-        )}
       </div>
       {orderForm?.product?.direction === 'from-airport' && (
         <UI.MeetAndgGreetForm form={form} />
