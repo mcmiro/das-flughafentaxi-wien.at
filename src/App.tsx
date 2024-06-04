@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       {responseContent ? (
-        <div className="h-[400px]">
+        <div className="h-[600px]">
           <UI.ResponseMessage
             content={responseContent}
             isModalOpen={isModalOpen}
