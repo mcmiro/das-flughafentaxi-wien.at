@@ -91,7 +91,7 @@ function App() {
             <UI.Button
               size="lg"
               weight="bold"
-              className="ml-auto mt-4 mb-64"
+              className="ml-auto my-4"
               type="submit"
             >
               {t('labelAndPlaceholder.submit')}
