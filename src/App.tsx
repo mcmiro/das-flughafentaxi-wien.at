@@ -13,7 +13,7 @@ import { ResponseModel } from './types/response';
 import '@iframe-resizer/child';
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { lang, changeLanguage } = useI18n();
   const [orderForm] = useAtom<any>(orderFormAtom);
   const [responseContent, setResponseContent] = useState<ResponseModel[]>();
@@ -31,7 +31,8 @@ function App() {
     if (!formData.isReturnJourney) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { returnJourney, ...rest } = formData;
-      return { ...rest, lang: lang ? lang : 'de' };
+      console.log('lang', lang);
+      return { ...rest, lang: i18n.language };
     }
     return formData;
   };
