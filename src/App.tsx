@@ -31,7 +31,7 @@ function App() {
     if (!formData.isReturnJourney) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { returnJourney, ...rest } = formData;
-      return { ...rest, lang };
+      return { ...rest, lang: lang ? lang : 'de' };
     }
     return formData;
   };
