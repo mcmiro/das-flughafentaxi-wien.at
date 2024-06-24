@@ -49,6 +49,7 @@ export function DatePicker({ section, onSelect }: DatePickerProps) {
         <UI.Calendar
           mode="single"
           selected={date}
+          fromDate={new Date()}
           onDayClick={handleSelect}
           initialFocus
           locale={de}

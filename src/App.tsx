@@ -17,6 +17,7 @@ function App() {
   const { lang, changeLanguage } = useI18n();
   const [orderForm] = useAtom<any>(orderFormAtom);
   const [responseContent, setResponseContent] = useState<ResponseModel[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const wasModalOpenRef = useRef<boolean>(false);
 
@@ -31,7 +32,6 @@ function App() {
     if (!formData.isReturnJourney) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { returnJourney, ...rest } = formData;
-      console.log('lang', lang);
       return { ...rest, lang: i18n.language };
     }
     return formData;
@@ -39,6 +39,7 @@ function App() {
 
   const onSubmit = async (data: OrderFormValues) => {
     const formData = serializeOrderDataForBackend(data);
+    setIsLoading(true);
     axios
       .post(`${import.meta.env.VITE_APP_API_URL}/order/create`, formData)
       .then(async (dataRes) => {
@@ -50,9 +51,11 @@ function App() {
           setResponseContent(response);
           setIsModalOpen(true);
         }
+        setIsLoading(false);
       })
       .catch(function (error) {
         console.log('Error: ', error);
+        setIsLoading(false);
       });
   };
 
@@ -99,9 +102,10 @@ function App() {
               <UI.CheckConditionsField form={form} />
               <UI.PriceSection />
               <UI.Button
+                disabled={isLoading}
                 size="lg"
                 weight="bold"
-                className="ml-auto my-4"
+                className={`ml-auto my-4`}
                 type="submit"
               >
                 {t('labelAndPlaceholder.submit')}
