@@ -3,6 +3,7 @@ import { FieldValues, useWatch } from 'react-hook-form';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { format } from 'date-fns';
+import defaultValues from '@/lib/default-order-values';
 
 export const orderFormAtom = atomWithStorage<FieldValues>('form', {});
 
@@ -61,6 +62,13 @@ const useOrderForm = (form: FieldValues) => {
     form.setValue('extras.stopoverValue', '');
   };
 
+  const handleResetForm = () => {
+    form.reset(defaultValues);
+    handleResetFlightInformation();
+    handleResetChildseats();
+    handleResetStopover();
+  };
+
   return {
     handleVehicle,
     handleDirection,
@@ -69,6 +77,7 @@ const useOrderForm = (form: FieldValues) => {
     handleResetChildseats,
     handleResetStopover,
     handleResetFlightInformation,
+    handleResetForm,
     selectedVehicle,
     selectedDirection,
     orderForm,

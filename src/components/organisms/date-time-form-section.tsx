@@ -2,7 +2,6 @@ import { UI } from '..';
 import { FieldValues } from 'react-hook-form';
 import useOrderForm from '@/hooks/use-order-form';
 import { useTranslation } from 'react-i18next';
-
 export interface DateTimeFormSectionProps {
   form: FieldValues;
   section: string;
